@@ -48,6 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
             toDoStatus: toDoStatusInput.value,
         };
         appendChild(toDo);
+        // reset fields
+        toDoNameInput.value = ""; // clear ToDoInput field
+        toDoStatusInput.value = ""; // reset ToDoStatus field
     });
 });
 function renderList() {
@@ -157,6 +160,7 @@ function toggleStatus(toDo) {
 function editToDo(index) {
     confirmEdit.addEventListener("click", () => {
         entries[index].toDo = editToDoInput.value;
+        editToDoInput.value = "";
         renderList();
     });
 }

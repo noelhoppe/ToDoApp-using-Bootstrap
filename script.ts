@@ -60,6 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
             toDoStatus: toDoStatusInput.value as ToDoStatus,
         }
         appendChild(toDo);
+
+        // reset fields
+        toDoNameInput.value = "";   // clear ToDoInput field
+        toDoStatusInput.value = ""; // reset ToDoStatus field
     })
 })
 
@@ -188,6 +192,8 @@ function toggleStatus(toDo: ToDo) {
 function editToDo(index: number) {
     confirmEdit.addEventListener("click", () => {
         entries[index].toDo = editToDoInput.value;
+        editToDoInput.value = "";
         renderList();
+
     })
 }
