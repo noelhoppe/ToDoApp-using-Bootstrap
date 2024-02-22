@@ -18,20 +18,29 @@
 <body class="bg-body-secondary">
 <div class="container-md">
     <!-- InputToDo -->
-    <div class="form-floating my-3">
-        <input id="to-do-name-input" class="form-control" type="text" placeholder="ToDo">
-        <label for="to-do-name-input">ToDo</label>
-    </div>
-    <!-- Select Status -->
-    <select id="to-do-status-input" class="form-select my-3">
-        <option selected>Select Status</option>
-        <option value="Undone">Undone</option>
-        <option value="Done">Done</option>
-    </select>
-    <!-- Submit Button -->
-    <button id="to-do-submit-button" class="btn btn-primary w-100 my-3">
-        Submit
-    </button>
+    <form class="was-validated" novalidate>
+        <div class="form-floating my-3 has-validation">
+            <input id="to-do-name-input" class="form-control" type="text" placeholder="ToDo" required>
+            <label for="to-do-name-input" class="form-label">ToDo</label>
+            <div class="invalid-feedback">
+                <p>Please enter a ToDo.</p>
+            </div>
+        </div>
+        <!-- Select Status -->
+        <label for="to-do-status-input" class="form-label d-none"></label>
+        <select id="to-do-status-input" class="form-select my-3" required>
+            <option selected disabled value="">Select Status</option>
+            <option value="Undone">Undone</option>
+            <option value="Done">Done</option>
+        </select>
+        <div class="invalid-feedback">
+            <p>Please enter a valid status.</p>
+        </div>
+        <!-- Submit Button -->
+        <button id="to-do-submit-button" class="btn btn-primary w-100 my-3" type="submit">
+            Submit
+        </button>
+    </form>
     <!-- ToDOTable -->
     <table class="table">
         <caption>ToDoList</caption>

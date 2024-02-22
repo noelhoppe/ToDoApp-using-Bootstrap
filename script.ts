@@ -45,8 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // EventListener for SubmitBtn
     toDoSubmitButton.addEventListener("click", (evt : MouseEvent) => {
         // Error Message (no ToDoName or NoToDoStatus)
-        if (toDoNameInput.value == "" || toDoStatusInput.selectedIndex == 0) {
-            alert("Enter a ToDoName and a ToDoStatus");
+
+        // Avoid submitting if one input field is empty and return
+       if (toDoNameInput.value == "" || toDoStatusInput.selectedIndex == 0) {
             return;
         }
 
